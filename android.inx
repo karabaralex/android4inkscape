@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Export</_name>
+    <id>org.inkscape.android</id>
+    
+	<dependency type="extension">org.inkscape.output.svg.inkscape</dependency>
+	
+	<dependency type="executable" location="extensions">android.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	
+	<param name="directory" type="string" _gui-text="Path to android project">~/</param>
+	<param name="image" type="string" _gui-text="Image name (without extension)">icon</param>
+	<param name="size" type="int" min="3" max="256" _gui-text="Smallest image size (launcher icon = 36)">36</param>
+    <param name="keepAspect" type="boolean" _gui-text="Maintain aspect ratio (vs. width = height)">false</param>
+	
+    <effect needs-live-preview="false">
+                <object-type>all</object-type>
+                <effects-menu>
+                      <submenu _name="Android"/>
+                </effects-menu>
+    </effect>
+    
+    <script>
+        <command reldir="extensions" interpreter="python">android.py</command>
+    </script>
+    
+</inkscape-extension>
