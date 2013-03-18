@@ -78,7 +78,7 @@ class Android(inkex.Effect):
     def get_slices(self):
         slices = []
         sel_area = {}
-        docHeight = self.document.getroot().get('height')
+        docHeight = self.document.getroot().get('height').replace("px", "")
         
         min_x, min_y, max_x, max_y = False, False, False, False
         for identifier in self.options.ids:
